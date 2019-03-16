@@ -10,24 +10,27 @@ public class Runner {
 	private static boolean stayRunning = true;
 	
 	// Use a Scanner to get console input from the player
-    static Scanner consoleScanner = new Scanner(System.in);
+    static Scanner consoleScanner = new Scanner(System.in);	
     
      // Starting room
     static Room driveway;
 	
 	public static void main(String[] args) {
-		
+		TAFrame frame = new TAFrame();
+	
 		// Build the map for the game
 		constructMap();
 			
 		// Set our current room to the driveway (our starting point)
 		Room currentRoom = driveway;
 		
+		frame.addText("Welcome to 'The Game'");
+		
 		// Keep looping to capture input as long as stayRunning == true
 		while (stayRunning) {
+			String consoleResponse = "Sorry, I don't understand";
+		
 			String inputFromPlayer = consoleScanner.nextLine();
-			String consoleResponse = "<no valid response determined>";
-			
 			// Cut the input into separate words
 			StringTokenizer tokenizer = new StringTokenizer(inputFromPlayer);
 			if (tokenizer.hasMoreTokens()) {
@@ -50,20 +53,20 @@ public class Runner {
 						}
 				
 						break;
-					case "behind":
+					case "back":
 						// If I can move forward, do so
-						if (currentRoom.getRoomBehind() != null) {
-							currentRoom = currentRoom.getRoomBehind();
+						if (currentRoom.getRoomBack() != null) {
+							currentRoom = currentRoom.getRoomBack();
 							consoleResponse = currentRoom.getDescription();
 						} else {
-							consoleResponse = "I can't move behind";
+							consoleResponse = "I can't move back";
 						}					
 						
 						break;
 				}
 			}
 			
-			System.out.println(consoleResponse);
+			System.out.print(consoleResponse);
 		}
 	}
 	
@@ -80,7 +83,7 @@ public class Runner {
 		
 		// Connect the two rooms
 		driveway.setRoomForward(frontDoor);
-		frontDoor.setRoomBehind(driveway);		
+		frontDoor.setRoomBack(driveway);		
 	}	
 	
 }

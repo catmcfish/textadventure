@@ -33,10 +33,10 @@ public class Room {
 	public void setRoomUp(Room roomUp) {
 		this.roomUp = roomUp;
 	}
-	public Room getRoomBehind() {
+	public Room getRoomBack() {
 		return roomBehind;
 	}
-	public void setRoomBehind(Room roomBehind) {
+	public void setRoomBack(Room roomBehind) {
 		this.roomBehind = roomBehind;
 	}
 	public Room getRoomForward() {
