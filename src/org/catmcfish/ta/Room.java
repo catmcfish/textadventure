@@ -1,4 +1,4 @@
-package org.catmcfish.ata;
+package org.catmcfish.ta;
 
 public class Room {
 
