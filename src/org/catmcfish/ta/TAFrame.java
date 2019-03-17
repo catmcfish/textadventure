@@ -16,7 +16,7 @@ public class TAFrame extends Frame {
 		textArea.setEditable(false);
 		
 		textField = new TextField();
-		textField.setText(">>"); // prompt
+		textField.setText(">>"); // prompt 
 		
 		gal = new GameActionListener();
 		
