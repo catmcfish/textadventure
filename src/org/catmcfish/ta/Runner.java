@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 public class Runner {
 
-	// Private (so noone outside this class' code can make changes.
+	// Private (so none outside this class' code can make changes.
 	// Static because there should only ever be one instance of this variable
 	private static boolean stayRunning = true;
 	
