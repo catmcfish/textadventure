@@ -10,6 +10,10 @@ public class TAFrame extends Frame {
 	private TextField textField;
 	private GameActionListener gal;
 	
+	public GameActionListener getGal() {
+		return gal;
+	}
+
 	TAFrame() {  
 		textArea = new TextArea();
 		textArea.setBounds(10,30, 500,500);
@@ -19,6 +23,8 @@ public class TAFrame extends Frame {
 		textField.setText(">>"); // prompt 
 		
 		gal = new GameActionListener();
+		
+		gal.setFrame(this);
 		
 		textField.addActionListener(gal);
 		
@@ -38,6 +44,6 @@ public class TAFrame extends Frame {
 	}  
 	
 	public void addText(String text) {
-		textArea.append(text);
+		textArea.append(text + "\n");
 	}
 }
